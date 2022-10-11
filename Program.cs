@@ -108,16 +108,15 @@
 
             //Övning 8
 
+            for (int i = 0; i < 5; i++)
+            {
             Console.WriteLine("Enter the number of chocolate eggs gathered");
-            int numOfEggs = 13;//Convert.ToInt32(Console.ReadLine());
-
-
-            int leftEggs = 4 % numOfEggs;
-
-
-            Console.WriteLine("The number of Duckbear gets");
-
-
+            int numOfEggs = Convert.ToInt32(Console.ReadLine());
+            int leftEggs = numOfEggs % 4;
+            int sisterGets= numOfEggs / 4;
+            Console.WriteLine($"The number of chocolate eggs four sisters gets : {sisterGets}");
+            Console.WriteLine($"The number of chocolate eggs Duckbear gets : {leftEggs}");
+            }
 
 
         }
