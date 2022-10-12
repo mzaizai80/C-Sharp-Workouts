@@ -105,22 +105,309 @@
             
             */
 
+            /*
+                        //Övning 8
 
-            //Övning 8
+                        for (int i = 0; i < 5; i++)
+                        {
+                        Console.WriteLine("Enter the number of chocolate eggs gathered");
+                        int numOfEggs = Convert.ToInt32(Console.ReadLine());
+                        int leftEggs = numOfEggs % 4;
+                        int sisterGets= numOfEggs / 4;
+                        Console.WriteLine($"The number of chocolate eggs four sisters gets : {sisterGets}");
+                        Console.WriteLine($"The number of chocolate eggs Duckbear gets : {leftEggs}");
+                        }
+            */
 
-            for (int i = 0; i < 5; i++)
+            // Övning 9
+
+
+            /*
+                        // Kursmoment 
+                        // Ovning 1
+
+                        Console.WriteLine(" Vilken land vann fotbolls-VM för damer år 2015");
+                        string svar = Console.ReadLine().ToLower();
+
+                        if (svar == "usa")
+                        {
+                            Console.WriteLine("Rätt svar!");
+                        }
+                        if (svar != "usa")
+                        {
+                            Console.WriteLine("fel svar!");
+                        }
+
+                        // Ovning 2
+
+                        Console.WriteLine("Hur gammal är du? Svar i år");
+                        int ålder =int.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Hur mycket tjänar du per månad?Svar i kronor.");
+                        int inkomst = int.Parse(Console.ReadLine());
+
+                        if (ålder ==39)
+                        {
+                            Console.WriteLine("Du är lika gammal som medelperson i getoborg");
+                        }
+
+                        else if (ålder >39)
+                        {
+                            Console.WriteLine("Du är äldre..");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Du är yngre");
+                        }
+
+                        if (inkomst == 36100)
+                        {
+                            Console.WriteLine("Du är lika mycket pengar i getoborg");
+                        }
+
+                        else if (inkomst > 36100)
+                        {
+                            Console.WriteLine("Du tjänar mer ån medellöne..");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Du tjänar mindre ån medellöne");
+                        }
+            */
+
+            /*// Ovning 3
+
+            Console.WriteLine("Vad heter du?");
+            string name = Console.ReadLine().ToLower();
+            Console.WriteLine("Hur gammal är du?");
+            int ålder = int.Parse(Console.ReadLine());
+
+            if (name=="felicai" || name== "felix")
             {
-            Console.WriteLine("Enter the number of chocolate eggs gathered");
-            int numOfEggs = Convert.ToInt32(Console.ReadLine());
-            int leftEggs = numOfEggs % 4;
-            int sisterGets= numOfEggs / 4;
-            Console.WriteLine($"The number of chocolate eggs four sisters gets : {sisterGets}");
-            Console.WriteLine($"The number of chocolate eggs Duckbear gets : {leftEggs}");
+                Console.WriteLine("Du har namnsdag idag, du får gå ombord först.");
             }
+            else if (ålder > 75)
+            {
+                Console.WriteLine("På grund av din ålder får du gå ombord i grupp två.");
+            }
+            else if (ålder >18 && ålder <= 25 )
+            {
+                Console.WriteLine("Unga vuxna får gå ombord i grupp tre");
+            }
+            else
+            {
+                Console.WriteLine("Du är velkomma ombord i grup fyra");
+            }
+
+            // Ovning 4
+
+            Console.WriteLine("hur gammal är du? svar i år");
+            int ålder = int.Parse(Console.ReadLine());
+
+            int x = 0;
+            if (65 < ålder || ( ålder <= 18   && ålder >= 10))
+            {
+                Console.WriteLine("Du kan få extra biligt pris för kaffe!!");
+            }
+            else
+            {
+            Console.WriteLine("Du får vanligt priss.. ");
+            }
+
+            // Ovning 5
+
+
+            int n, sum = 0;
+            int fact = 1;
+
+            Console.WriteLine("Ange numret som summan görs till ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                sum += i;
+                fact *= i;
+            }
+
+            Console.WriteLine("summan av talen från i till {0} är {1}", n, sum);
+            Console.WriteLine($"summan av talen från i till {n} är {sum}");
+            Console.WriteLine("Fakultet är " + fact);
+
+
+            // Ovning 6
+
+            Console.WriteLine("Detta är ett omvandlingsprogram");
+            string val = "";
+
+            while (val != "3")
+            {
+                Console.WriteLine();
+                Console.WriteLine("Välj ett av följande alternative");
+                Console.WriteLine("1. omvandla meter till kilometer");
+                Console.WriteLine("2. omvandla kilometer till meter ");
+                Console.WriteLine("3. omvandla avsluta programet");
+
+                val = Console.ReadLine();
+                switch (val)
+                {
+                    case "1":
+                        Console.WriteLine("Skriv in en längd i meter");
+                        double antalMeter = double.Parse(Console.ReadLine());
+                        Console.WriteLine($"längden du skriv in är detsamma som {antalMeter / 1000}km");
+                        break;
+                    case "2":
+                        Console.WriteLine("Skriv in en längd i Km");
+                        double antalKiloMeter = double.Parse(Console.ReadLine());
+                        Console.WriteLine($"längden du skriv in är detsamma som {antalKiloMeter * 1000}km");
+                        break;
+
+                    case "3":
+                        Console.WriteLine("Programmet avslutas..");
+                        break;
+
+                    default:
+                        Console.WriteLine("Du valde inte ett giltigt alternativ!");
+                        break;
+                }
+
+            }
+
+            // Ovning 7
+
+            double insats, ränta, mål;
+
+            Console.WriteLine("hur stor är insats i banken?");
+            insats = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Vad är räntan (i%)");
+            ränta = 1 + Convert.ToDouble(Console.ReadLine()) / 100.0;
+            
+            Console.WriteLine("Vilken insatsvärde vill du nå");
+            mål = Convert.ToDouble(Console.ReadLine());
+
+            int år = 0;
+
+            do
+            {
+                insats *= ränta;
+                ++år;
+
+            } while (insats < mål);
+            Console.WriteLine("I {0} år insatsvärde kommer att vara {1}.", år, insats);
+            Console.ReadKey();
+
+
+            // Ovning 8
+
+
+            Console.WriteLine("Vilket är Europas folkrikaste land?");
+            Console.WriteLine("Du kan välja genom \n" +
+                "\t1. Germany\n" +
+                "\t2. Belgium\n" +
+                "\t3. Russia\n" +
+                "\t4. France\n" +
+                "\t5. Italy\n");            
+
+            for (int i = 5; i > 0; --i)
+            {
+            string val =  Console.ReadLine().ToLower();
+            string svar = "russia";
+
+                if (svar == val)
+                {
+                    Console.WriteLine("Du gissat rätt " + val);
+                    break;
+                }
+
+                Console.WriteLine($"Det är fel, d u har {i-1} moljghet kvar.");
+
+            }
+
+            
+            
+            // Ovning 9
+
+            Console.WriteLine("kriv en rectangléls bred .");
+            int bredd = int.Parse(Console.ReadLine());
+            Console.WriteLine("Skrev rektanglens höjd");
+            int höjd = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            for (int i = 0; i < höjd; i++)
+            {
+
+                for (int j = 0; j < bredd; j++)
+                {
+                    if (i == 0 || i == höjd - 1 || j == 0 || j == bredd - 1)
+                    {
+                        Console.Write("X");
+                   }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+
+            
+            
+            // Ovning 10
+
+            string medelande = "Hej! Detta är ett medelande. Tack för att du läste medelande.";
+            for (int i = 0; i < medelande.Length; i++)
+            {
+                Console.Write(medelande[i]);
+
+                if (medelande[i]=='.')
+                {
+                    Thread.Sleep(1000);
+                }
+                else
+                {
+                    Thread.Sleep(100);
+                }            
+            }
+
+            // Ovning 11
+
+            Console.WriteLine("Hur många sporteer vill du skriva in?");
+
+            int antal = int.Parse(Console.ReadLine());
+            string[] sporter = new string[antal];
+
+            for (int i = 0; i < antal; i++)
+            {
+                Console.WriteLine("Skriv in en sport;");
+
+                sporter[i] = Console.ReadLine();
+
+            }
+            Console.WriteLine("Här är de sporter du skrev in");
+            for (int i = 0; i < antal; i++)
+            {
+                Console.WriteLine(sporter[i]);
+            }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         }
-
-
     }
 }
